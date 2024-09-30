@@ -1,0 +1,168 @@
+/* General Body Styling */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Navbar Styling */
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-around; /* Spread items evenly with equal space */
+    align-items: center; /* Vertically center the items */
+    flex-direction: column; /* Align items in a column */
+    width: 100%; /* Ensure the navbar takes full width */
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: white;
+    text-align: center; /* Center text within the link */
+    width: 100%; /* Make each nav link fill the column width */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    border: 2px solid transparent; /* Initial state without border */
+}
+
+/* Hover effect for nav-links */
+.navbar-nav .nav-link:hover {
+    color: #ffc107; /* Change text color on hover */
+    background-color: #343a40; /* Slight background color change */
+    border: 2px solid #ffc107; /* Add a yellow border on hover */
+    border-radius: 5px; /* Slight border radius on hover */
+}
+
+/* Dropdown Styles */
+.nav-item .dropdown-menu {
+    background-color: #343a40;
+    border: none;
+    min-width: 180px;
+    text-align: left; /* Align dropdown text to the left */
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth transition on hover */
+    border-left: 2px solid transparent; /* Add border effect */
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ffc107; /* Change background color on hover */
+    color: black;
+    border-left: 2px solid #343a40; /* Add left border on hover */
+}
+
+/* Profile Icon Styling */
+.profile-icon {
+    width: 30px; /* Set icon width */
+    height: 30px; /* Set icon height */
+    border-radius: 50%; /* Make the icon circular */
+    transition: transform 0.3s ease, border 0.3s ease; /* Add scaling and border transition */
+}
+
+.profile-icon:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    border: 2px solid #ffc107; /* Add yellow border on hover */
+}
+
+/* Flexbox Spacing for Dropdown Items */
+.navbar-nav .nav-item {
+    position: relative;
+    width: 100%; /* Make sure each nav-item takes full width */
+    display: flex;
+    justify-content: center; /* Center nav-items */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Add space between each nav-item */
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Center dropdown below the item */
+    top: 100%;
+    z-index: 1;
+}
+
+/* Transition effects for Dropdown */
+.navbar-nav .dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
+
+/* Ensure dropdown stays within screen */
+.navbar-nav .dropdown-menu {
+    transform: translateX(-50%);
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    display: none;
+}
+
+.profile-icon:hover + .profile-dropdown,
+.profile-dropdown:hover {
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Info Section */
+.profile-info {
+    margin-bottom: 10px;
+}
+
+/* Profile Dropdown Links */
+.profile-dropdown a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.profile-dropdown a:hover {
+    color: #ffc107; /* Change link color on hover */
+    border-bottom: 1px solid #ffc107; /* Add bottom border on hover */
+}
+
+/* Special Section Styling */
+.details-section {
+    margin-top: 20px;
+}
+
+.details-section .card {
+    margin-bottom: 20px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-section .card:hover {
+    border: 2px solid #ffc107; /* Add yellow border on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.details-section .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.details-section .card-text {
+    font-size: 1.125rem;
+    font-weight: normal;
+}
+
+/* Chart Section */
+#salesChart {
+    width: 100%;
+    height: 400px;
+}

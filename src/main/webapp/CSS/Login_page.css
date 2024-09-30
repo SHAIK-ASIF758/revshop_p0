@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+/* Gradient background or background image */
+body {
+    background-image: url('../images/f3.jpg'); /* Path to the background image */
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Prevent overflow from animated bubbles */
+    position: relative; /* Ensures bubbles stay within the body bounds */
+}
+
+/* Bubble/Drops animation with contrasting colors */
+.bubble {
+    position: fixed; /* Changed to fixed to stop movement affecting layout */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6); /* White color for better visibility */
+    border: 2px solid rgba(0, 150, 255, 0.8); /* Blue border for contrast */
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.5); /* Glow effect */
+    bottom: -150px;
+    animation: rise 10s infinite ease-in-out;
+    mix-blend-mode: difference; /* This makes bubbles take an opposite color based on background */
+}
+
+/* Animation for bubbles rising */
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-1200px);
+        opacity: 0;
+    }
+}
+
+/* Different sized bubbles with varying durations */
+.bubble.small {
+    width: 30px;
+    height: 30px;
+    left: 10%;
+    animation-duration: 12s;
+}
+
+.bubble.medium {
+    width: 50px;
+    height: 50px;
+    left: 30%;
+    animation-duration: 14s;
+}
+
+.bubble.large {
+    width: 70px;
+    height: 70px;
+    left: 50%;
+    animation-duration: 16s;
+}
+
+.bubble.extra-large {
+    width: 100px;
+    height: 100px;
+    left: 70%;
+    animation-duration: 18s;
+}
+
+/* Adjusting container styles for transparency */
+.container {
+    background: rgba(255, 255, 255, 0.7); /* Adjusted for transparency */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Slightly darker shadow for contrast */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.container img.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+/* User type buttons styling */
+.user-type-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.user-type-buttons .btn {
+    width: 45%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.user-type-buttons .btn:hover {
+    background-color: #0056b3;
+}
+
+.user-type-buttons .btn.active {
+    background-color: #004494;
+}
+
+/* Forms hidden by default */
+#customerForm, #sellerForm {
+    display: none;
+}
+
+/* Form input styles */
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 40px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #80bdff;
+    outline: none;
+}
+
+/* Icons inside the form fields */
+.form-group img.icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 20px;
+}
+
+/* Button styling */
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Link styling */
+.loginLink a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.loginLink a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Input group styles for form alignment */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group-text {
+    background-color: #e9ecef;
+}
+
+.input-group input {
+    border-radius: 0 5px 5px 0;
+}
+
+/* Z-index for bubbles to appear behind the content */
+.bubble {
+    z-index: 1;
+}
+
+/* Adjusting container styles for transparency */
+.container {
+    background: rgba(255, 255, 255, 0.8); /* Slightly more opaque for visibility */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    padding: 30px;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}

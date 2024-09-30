@@ -1,0 +1,108 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 90px 10px 10px 10px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #495057;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+.form-selection button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-selection button:hover {
+    background-color: #0056b3;
+}
+
+/* Change button color on hover */
+.user-type-buttons .btn:hover {
+    background-color: #0056b3; /* Hover color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Change button color when selected (active) */
+.user-type-buttons .btn.active {
+    background-color: #004494; /* Color for active button */
+    box-shadow: none; /* Ensure no additional box-shadow */
+}
+.user-type-buttons .btn {
+    background-color: #007bff; /* Initial background color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Remove box-shadow to avoid cutting effect */
+    box-shadow: none;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.loginLink {
+    margin-top: 20px;
+}
+
+.loginLink a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+.loginLink a:hover {
+    text-decoration: underline;
+}
