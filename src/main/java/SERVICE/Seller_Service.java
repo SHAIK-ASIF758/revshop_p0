@@ -25,9 +25,8 @@ public class Seller_Service {
 			if(!seller.getSeller_password().equals(password)) {
 				throw new UserNotFoundException("Wrong Password");
 			}
-		}//String name,long phone_number,String address,String email,double wallet_balance
+		}
 		return new Seller_DTO(seller.getSeller_id(),seller.getSeller_name(),seller.getSeller_email(),seller.getSeller_phone_number(),seller.getSeller_address(),seller.getTotal_earning(),seller.getCurrent_month_earning(),seller.getTotal_item_sold(),seller.getCurrent_month_item_sold());
-
 	}
 	public Seller_DTO updateSellerProfile(Seller seller) {
 		seller_DAO.updateSeller(seller);

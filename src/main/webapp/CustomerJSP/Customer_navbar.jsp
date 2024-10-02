@@ -116,10 +116,14 @@
                         </ul>
                     </li>
                     <li class="nav-item" style="margin: 0 28px;">
-                        <a class="nav-link" href="/RevShop_Project_P0/CustomerFavoriteActionsServlet">Wishlist</a>
+                        <a class="nav-link" href="/RevShop_Project_P0/CustomerFavoriteActionsServlet">
+                            <i class="fas fa-heart"></i> Wishlist
+                        </a>
                     </li>
                     <li class="nav-item" style="margin: 0 28px;">
-                        <a class="nav-link" href="/RevShop_Project_P0/CustomerCartServlet">My Cart</a>
+                        <a class="nav-link" href="/RevShop_Project_P0/CustomerCartServlet">
+                            <i class="fas fa-shopping-cart"></i> My Cart
+                        </a>
                     </li>
                     <li class="nav-item" style="margin: 0 28px;">
                         <a class="nav-link" href="/RevShop_Project_P0/CustomerJSP/CustomerOrderHistory.jsp">Orders History</a>

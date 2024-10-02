@@ -58,7 +58,7 @@
         <!-- Customer Login Form -->
         <div id="customerForm">
             <h3>Customer Login</h3>
-            <form action="/Project_P0/CustomerLoginServlet" method="post" class="form-group">
+            <form action="/RevShop_Project_P0/CustomerLoginServlet" method="post" class="form-group">
                 <label for="custEmail">
                     <b>Email</b>
                 </label>

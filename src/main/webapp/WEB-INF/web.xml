@@ -99,4 +99,24 @@
     <servlet-name>SellerDeleteProductServlet</servlet-name>
     <url-pattern>/SellerDeleteProductServlet</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>CustomerWishlistServlet</display-name>
+    <servlet-name>CustomerWishlistServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerWishlistServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerWishlistServlet</servlet-name>
+    <url-pattern>/CustomerWishlistServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerFavoriteActionsServlet</display-name>
+    <servlet-name>CustomerFavoriteActionsServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerFavoriteActionsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerFavoriteActionsServlet</servlet-name>
+    <url-pattern>/CustomerFavoriteActionsServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
