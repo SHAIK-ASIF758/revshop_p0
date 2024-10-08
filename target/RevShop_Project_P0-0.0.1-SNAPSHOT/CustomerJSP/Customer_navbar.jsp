@@ -116,21 +116,25 @@
                         </ul>
                     </li>
                     <li class="nav-item" style="margin: 0 28px;">
-                        <a class="nav-link" href="/RevShop_Project_P0/CustomerFavoriteActionsServlet">Wishlist</a>
+                        <a class="nav-link" href="/RevShop_Project_P0/CustomerFavoriteActionsServlet">
+                            <i class="fas fa-heart"></i> Wishlist
+                        </a>
                     </li>
                     <li class="nav-item" style="margin: 0 28px;">
-                        <a class="nav-link" href="/Project_P0/CustomerCartServlet">My Cart</a>
+                        <a class="nav-link" href="/RevShop_Project_P0/CustomerCartServlet">
+                            <i class="fas fa-shopping-cart"></i> My Cart
+                        </a>
                     </li>
                     <li class="nav-item" style="margin: 0 28px;">
-                        <a class="nav-link" href="/Project_P0/CustomerJSP/CustomerOrderHistory.jsp">Orders History</a>
+                        <a class="nav-link" href="/RevShop_Project_P0/CustomerJSP/CustomerOrderHistory.jsp">Orders History</a>
                     </li>
                     <li class="nav-item dropdown" style="margin: 0 28px;">
                         <a class="nav-link dropdown-toggle" href="#" id="helpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Help
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="helpDropdown">
-                            <li><a class="dropdown-item" href="/Project_P0/JSP/ErrorPage.jsp">Chat Bot</a></li>
-                            <li><a class="dropdown-item" href="/Project_P0/JSP/ErrorPage.jsp">Customer Care</a></li>
+                            <li><a class="dropdown-item" href="/RevShop_Project_P0/JSP/ErrorPage.jsp">Chat Bot</a></li>
+                            <li><a class="dropdown-item" href="/RevShop_Project_P0/JSP/ErrorPage.jsp">Customer Care</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown" style="margin: 0 15px;">
@@ -138,9 +142,9 @@
                             <img src="../images/profileicon.png" alt="Profile" class="profile-icon">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                            <li><a class="dropdown-item" href="/Project_P0/CustomerUpdateProfile">Update Profile</a></li>
-                            <li><a class="dropdown-item" href="/Project_P0/CustomerAddToWalletServlet">Wallet</a></li>
-                            <li><a class="dropdown-item" href="/Project_P0/JSP/Login_page.jsp">Logout</a></li>
+                            <li><a class="dropdown-item" href="/RevShop_Project_P0/CustomerUpdateProfile">Update Profile</a></li>
+                            <li><a class="dropdown-item" href="/RevShop_Project_P0/CustomerAddToWalletServlet">Wallet</a></li>
+                            <li><a class="dropdown-item" href="/RevShop_Project_P0/JSP/Login_page.jsp">Logout</a></li>
                         </ul>
                     </li>
                 </ul>

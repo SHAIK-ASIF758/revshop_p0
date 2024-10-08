@@ -44,41 +44,30 @@
     </script>
 </head>
 <body>
-<div class="bubble small"></div>
-<div class="bubble medium"></div>
-<div class="bubble large"></div>
-<div class="bubble extra-large"></div>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Login to RevShop</h2>
 
-        <div class="user-type-buttons">
-            <button class="btn" onclick="showLoginForm('customer')">Customer</button>
-            <button class="btn" onclick="showLoginForm('seller')">Seller</button>
+        <div class="user-type-buttons mb-4">
+            <button class="btn btn-primary" onclick="showLoginForm('customer')">Customer</button>
+            <button class="btn btn-primary" onclick="showLoginForm('seller')">Seller</button>
         </div>
+
         <!-- Customer Login Form -->
-        <div id="customerForm">
+        <div id="customerForm" style="display: none;">
             <h3>Customer Login</h3>
             <form action="/RevShop_Project_P0/CustomerLoginServlet" method="post" class="form-group">
-                <label for="custEmail">
-                    <b>Email</b>
-                </label>
+                <label for="custEmail">Email</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-envelope"></i>
-                        </span>
+                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
                     </div>
                     <input type="email" id="custEmail" name="custEmail" class="form-control" required>
                 </div>
 
-                <label for="custPassword">
-                    <b>Password</b>
-                </label>
+                <label for="custPassword">Password</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-lock"></i>
-                        </span>
+                        <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
                     </div>
                     <input type="password" id="custPassword" name="custPassword" class="form-control" required>
                     <div class="input-group-append">
@@ -89,31 +78,26 @@
                 </div>
 
                 <button type="submit" class="btn btn-success btn-block">Login</button>
+                <a href="#" class="btn btn-link" onclick="showForgotPasswordModal()">Forgot Password?</a>
             </form>
         </div>
+
         <!-- Seller Login Form -->
-        <div id="sellerForm">
+        <div id="sellerForm" style="display: none;">
             <h3>Seller Login</h3>
             <form action="/RevShop_Project_P0/SellerLoginServlet" method="post" class="form-group">
-                <label for="sellEmail">
-                    <b>Email</b>
-                </label>
+                <label for="sellEmail">Email</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-envelope"></i>
-                        </span>
+                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
                     </div>
                     <input type="email" id="sellEmail" name="sellEmail" class="form-control" required>
                 </div>
-                <label for="sellPassword">
-                    <b>Password</b>
-                </label>
+
+                <label for="sellPassword">Password</label>
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">
-                            <i class="fa-solid fa-lock"></i>
-                        </span>
+                        <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
                     </div>
                     <input type="password" id="sellPassword" name="sellPassword" class="form-control" required>
                     <div class="input-group-append">
@@ -122,17 +106,45 @@
                         </span>
                     </div>
                 </div>
+
                 <button type="submit" class="btn btn-success btn-block">Login</button>
+                <a href="#" class="btn btn-link" onclick="showForgotPasswordModal()">Forgot Password?</a>
             </form>
         </div>
+    </div>
 
-        <div class="loginLink">
-            <p>New here? <a href="/RevShop_Project_P0/JSP/Registration_page.jsp">Register</a></p>
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Forgot Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/RevShop_Project_P0/ForgotPasswordServlet" method="post">
+                        <div class="form-group">
+                            <label for="emailForOTP">Enter your email address:</label>
+                            <input type="email" id="emailForOTP" name="emailForOTP" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send OTP</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-<script src="https://kit.fontawesome.com/2f6436cdea.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function showForgotPasswordModal() {
+            $('#forgotPasswordModal').modal('show');
+        }
+    </script>
+
+    <script src="https://kit.fontawesome.com/2f6436cdea.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>

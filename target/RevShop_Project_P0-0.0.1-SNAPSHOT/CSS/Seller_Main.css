@@ -28,7 +28,7 @@ body {
 /* Hover effect for nav-links */
 .navbar-nav .nav-link:hover {
     color: #ffc107; /* Change text color on hover */
-    background-color: #343a40; /* Slight background color change */
+    background-color: red; /* Slight background color change */
     border: 2px solid #ffc107; /* Add a yellow border on hover */
     border-radius: 5px; /* Slight border radius on hover */
 }

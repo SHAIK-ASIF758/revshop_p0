@@ -41,7 +41,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="ordersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Orders</a>
                     <ul class="dropdown-menu" aria-labelledby="ordersDropdown">
                         <li><a class="dropdown-item" href="/RevShop_Project_P0/SellerReceivedOrder">Received</a></li>
-                        <li><a class="dropdown-item" href="/RevShop_Project_P0/JSP/SellerSuccessfulOrders.jsp">Completed Orders</a></li>
+                        <li><a class="dropdown-item" href="/RevShop_Project_P0/SellerJSP/SellerSuccessfulOrders.jsp">Completed Orders</a></li>
                     </ul>
                 </li>
                 

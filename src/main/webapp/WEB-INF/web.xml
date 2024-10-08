@@ -99,6 +99,36 @@
     <servlet-name>SellerDeleteProductServlet</servlet-name>
     <url-pattern>/SellerDeleteProductServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SellerUpdateProductServlet</display-name>
+    <servlet-name>SellerUpdateProductServlet</servlet-name>
+    <servlet-class>SellerController.SellerUpdateProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SellerUpdateProductServlet</servlet-name>
+    <url-pattern>/SellerUpdateProductServlet</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>SellerUpdateDetailsServlet</display-name>
+    <servlet-name>SellerUpdateDetailsServlet</servlet-name>
+    <servlet-class>SellerController.SellerUpdateDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SellerUpdateDetailsServlet</servlet-name>
+    <url-pattern>/SellerUpdateDetailsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SellerReceivedOrder</display-name>
+    <servlet-name>SellerReceivedOrder</servlet-name>
+    <servlet-class>SellerController.SellerReceivedOrder</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SellerReceivedOrder</servlet-name>
+    <url-pattern>/SellerReceivedOrder</url-pattern>
+  </servlet-mapping>
    <servlet>
     <description></description>
     <display-name>CustomerWishlistServlet</display-name>
@@ -119,4 +149,112 @@
     <servlet-name>CustomerFavoriteActionsServlet</servlet-name>
     <url-pattern>/CustomerFavoriteActionsServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerCartServlet</display-name>
+    <servlet-name>CustomerCartServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerCartServlet</servlet-name>
+    <url-pattern>/CustomerCartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerUpdateCartServlet</display-name>
+    <servlet-name>CustomerUpdateCartServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerUpdateCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerUpdateCartServlet</servlet-name>
+    <url-pattern>/CustomerUpdateCartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerCartActionsServlet</display-name>
+    <servlet-name>CustomerCartActionsServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerCartActionsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerCartActionsServlet</servlet-name>
+    <url-pattern>/CustomerCartActionsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerUpdateProfile</display-name>
+    <servlet-name>CustomerUpdateProfile</servlet-name>
+    <servlet-class>CustomerController.CustomerUpdateProfile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerUpdateProfile</servlet-name>
+    <url-pattern>/CustomerUpdateProfile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerAddToWalletServlet</display-name>
+    <servlet-name>CustomerAddToWalletServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerAddToWalletServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerAddToWalletServlet</servlet-name>
+    <url-pattern>/CustomerAddToWalletServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerPlaceOrderServlet</display-name>
+    <servlet-name>CustomerPlaceOrderServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerPlaceOrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerPlaceOrderServlet</servlet-name>
+    <url-pattern>/CustomerPlaceOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerPlaceOrderSuccessServlet</display-name>
+    <servlet-name>CustomerPlaceOrderSuccessServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerPlaceOrderSuccessServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerPlaceOrderSuccessServlet</servlet-name>
+    <url-pattern>/CustomerPlaceOrderSuccessServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerErrorServlet</display-name>
+    <servlet-name>CustomerErrorServlet</servlet-name>
+    <servlet-class>CustomerController.CustomerErrorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerErrorServlet</servlet-name>
+    <url-pattern>/CustomerErrorServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+        <servlet-name>ForgotPasswordServlet</servlet-name>
+        <servlet-class>CustomerController.ForgotPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ForgotPasswordServlet</servlet-name>
+        <url-pattern>/ForgotPasswordServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- OTP Verification Servlet Mapping -->
+    <servlet>
+        <servlet-name>VerifyOtpServlet</servlet-name>
+        <servlet-class>CustomerController.VerifyOtpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerifyOtpServlet</servlet-name>
+        <url-pattern>/VerifyOtpServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Password Reset Servlet Mapping (Optional if implemented) -->
+    <servlet>
+        <servlet-name>PasswordResetServlet</servlet-name>
+        <servlet-class>com.revshop.PasswordResetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PasswordResetServlet</servlet-name>
+        <url-pattern>/PasswordResetServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -6,11 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <title>RevShop</title>
-
-    <!-- Bootstrap CSS
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../CSS/Seller_Main.css"> -->
+    <link rel="stylesheet" href="../CSS/Seller_Main.css">
 
 
 
@@ -43,7 +41,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="ordersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Orders</a>
                     <ul class="dropdown-menu" aria-labelledby="ordersDropdown">
                         <li><a class="dropdown-item" href="/RevShop_Project_P0/SellerReceivedOrder">Received</a></li>
-                        <li><a class="dropdown-item" href="/RevShop_Project_P0/JSP/SellerSuccessfulOrders.jsp">Completed Orders</a></li>
+                        <li><a class="dropdown-item" href="/RevShop_Project_P0/SellerJSP/SellerSuccessfulOrders.jsp">Completed Orders</a></li>
                     </ul>
                 </li>
                 

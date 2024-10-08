@@ -52,7 +52,7 @@ public class CustomerRegistrationServlet extends HttpServlet {
             Customer customer = new Customer(name, phone_number, address, email, password, 0);
             Customer_Service customer_service = new Customer_Service();
             customer_service.registerCustomer(customer);
-            response.sendRedirect("/Project_P0/JSP/Login_page.jsp");
+            response.sendRedirect("/RevShop_Project_P0/JSP/Login_page.jsp");
         }
     }
 
