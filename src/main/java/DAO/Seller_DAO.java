@@ -11,7 +11,7 @@ import ENTITY.Seller;
 import UTIL.DataBaseConnection;
 
 public class Seller_DAO {
-	//gunaasifabhi
+	
 	private Connection connection;
 	public Seller_DAO() {
 		connection=DataBaseConnection.getInstance().getConnection();
