@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>RevShop</title>
@@ -11,7 +8,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/Seller_Main.css">
 
-    <!-- Custom CSS for Hover Effects -->
+    <!-- Custom CSS for Hover Effects and Profile Icon -->
     <style>
         /* General Body Styling */
         body {
@@ -39,10 +36,10 @@
 
         /* Hover effect for navbar links */
         .navbar-nav .nav-link:hover {
-            color: #ffc107; /* Change text color on hover */
-            background-color: #343a40; /* Slight background color change */
+            color: #ffc107; /* Yellow text color on hover */
+            background-color: #495057; /* Slightly lighter background on hover */
+            border-radius: 5px; /* Rounded edges on hover */
             border: 2px solid #ffc107; /* Add a yellow border on hover */
-            border-radius: 5px; /* Slight border radius on hover */
         }
 
         /* Dropdown Styles */
@@ -53,20 +50,18 @@
 
         .dropdown-item {
             color: white;
-            transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth transition on hover */
-            border-left: 2px solid transparent;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .dropdown-item:hover {
             background-color: #ffc107;
             color: black;
-            border-left: 2px solid #343a40;
         }
 
         /* Profile Icon Styling */
         .profile-icon {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%; /* Make the icon circular */
             transition: transform 0.3s ease, border 0.3s ease; /* Add scaling and border transition */
         }
@@ -82,7 +77,7 @@
             margin-bottom: 10px; /* Add space between each nav-item */
         }
 
-        /* Transition effects for dropdown */
+        /* Dropdown animation */
         .navbar-nav .dropdown-menu {
             display: none;
             opacity: 0;
@@ -93,7 +88,6 @@
             display: block;
             opacity: 1;
         }
-
     </style>
 </head>
 

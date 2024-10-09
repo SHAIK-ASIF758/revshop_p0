@@ -141,7 +141,7 @@
 
     <script>
         function updateProduct(productId) {
-            window.location.href = 'JSP/SellerUpdateProducts.jsp?productId=' + productId;
+            window.location.href = 'SellerJSP/SellerUpdateProducts.jsp?productId=' + productId;
         }
 
         function deleteProduct(productId) {

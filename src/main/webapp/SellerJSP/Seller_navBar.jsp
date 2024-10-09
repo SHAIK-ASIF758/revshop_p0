@@ -6,9 +6,11 @@
 <head>
     <meta charset="UTF-8">
     <title>RevShop</title>
+
+    <!-- Bootstrap CSS
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../CSS/Seller_Main.css">
+    <link rel="stylesheet" href="../CSS/Seller_Main.css"> -->
 
 
 
@@ -50,13 +52,13 @@
                         Help
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="helpDropdown">
-                        <li><a class="dropdown-item" href="/RevShop_Project_P0/JSP/ErrorPage.jsp">Chat Bot</a></li>
+                        <li><a class="dropdown-item" href="/RevShop_Project_P0/ErrorPage.jsp">Chat Bot</a></li>
                         <li><a class="dropdown-item" href="/RevShop_Project_P0/JSP/ErrorPage.jsp">Technical Support</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown" style="margin: 0 15px;">
                     <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../images/Profile-icon.png" alt="Profile" class="profile-icon">
+                        <img src="../images/Profileicon.png" alt="Profile" class="profile-icon">
                         
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="profileDropdown">

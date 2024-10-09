@@ -8,48 +8,136 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../CSS/registration.css">
     <style>
-    body{
-    background-image: url('/RevShop_Project_P0/Images/MainRevature.png'); /* Path to the background image */
-        /* Full screen: 100% of the viewport width and height */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed; /* Keeps the image fixed during scrolling */
-
-            }
-        /* Style for password validation feedback */
-        .valid-feedback {
-            display: none;
-        }
-        .invalid-feedback {
-            display: none;
-        }
-        .strong-password {
-            color: green;
-            display: none;
-        }
-        .weak-password {
-            color: red;
-            display: none;
-        }
-
-        /* Style for the user type selection buttons */
-        .user-type-buttons {
+        /* General Body Styling */
+        body {
+           color:black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            align-items: center;
+            background-image: url('https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWNvbW1lcmNlfGVufDB8fDB8fHww');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            backdrop-filter: blur(6px); /* Add background blur */
         }
+
+        /* Container Styling */
+        .container {
+        color:black;
+            background-color: rgba(255, 255, 255, 0.2); /* Transparent with a slight blur */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            max-width: 450px; /* Default width */
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px); /* Slight blur on the container */
+            border: 1px solid rgba(255, 255, 255, 0.4); /* Glassy effect border */
+            transition: width 0.5s ease; /* Smooth transition for width */
+        }
+
+        /* Expanded container for form */
+        .expanded {
+            max-width: 70%; /* Expanded to 70% width when a form is clicked */
+        }
+
+        /* Heading Styling */
+        h2, h3 {
+            margin-bottom: 24px;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Input Field Styling */
+        input[type="text"], input[type="email"], input[type="password"] {
+            border-radius: 20px;
+            border: 2px solid #ddd;
+            padding: 10px;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.6); /* Green glow on focus */
+        }
+
+        /* Label Styling */
+        label {
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        /* Button Styling */
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
         .user-type-buttons .btn {
             margin: 0 10px;
             width: 150px;
+            transition: background-color 0.3s, transform 0.3s;
         }
+
         .user-type-buttons .btn:hover {
-            opacity: 0.9;
+            background-color: #007bff;
+            transform: translateY(-2px);
         }
+
+        /* Password Strength Indicator */
+        .strong-password {
+            color: #28a745;
+            display: none;
+        }
+
+        .weak-password {
+            color: #ff4d4d;
+            display: none;
+        }
+
+        /* Registration Link */
+        .text-center a {
+            color: #fff;
+        }
+
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+#customerForm{
+ color:black;}
     </style>
+
     <script>
         function showForm(userType) {
             document.getElementById("customerForm").style.display = userType === 'customer' ? 'block' : 'none';
             document.getElementById("sellerForm").style.display = userType === 'seller' ? 'block' : 'none';
+
+            var container = document.querySelector('.container');
+            container.classList.add('expanded'); // Add expanded class when form is shown
+
             var buttons = document.querySelectorAll('.user-type-buttons .btn');
             buttons.forEach(function(btn) {
                 if (btn.textContent.toLowerCase() === userType) {
@@ -61,14 +149,12 @@
         }
 
         function validatePassword(input) {
-            // Password validation conditions
             var password = input.value;
             var minLength = password.length >= 8;
             var hasSymbol = /[!@#$%^&*(),.?":{}|<>]/g.test(password);
             var hasAlphabet = /[A-Za-z]/.test(password);
 
             if (minLength && hasSymbol && hasAlphabet) {
-                // Password meets all requirements
                 input.classList.remove("is-invalid");
                 input.classList.add("is-valid");
                 document.getElementById('passwordStrength').classList.remove("weak-password");
@@ -76,7 +162,6 @@
                 document.getElementById('passwordStrength').textContent = "Strong password";
                 document.getElementById('passwordStrength').style.display = "block";
             } else {
-                // Password does not meet requirements
                 input.classList.remove("is-valid");
                 input.classList.add("is-invalid");
                 document.getElementById('passwordStrength').classList.remove("strong-password");
@@ -88,14 +173,14 @@
     </script>
 </head>
 <body>
-<div class="container mt-5" >
-        <h2 class="text-center mb-4">RevShop</h2>
+    <div class="container">
+        <h2>RevShop</h2>
         <div class="user-type-buttons">
             <button class="btn btn-secondary" onclick="showForm('customer')">Customer</button>
             <button class="btn btn-secondary" onclick="showForm('seller')">Seller</button>
         </div>
 
-        <div id="customerForm" style="display:none;" class="mt-4">
+        <div id="customerForm" style="display:none;">
             <h3>Customer Registration</h3>
             <form action="/RevShop_Project_P0/CustomerRegistrationServlet" method="post" class="form-group">
                 <label for="custName">Name:</label>
@@ -119,7 +204,7 @@
             </form>
         </div>
 
-        <div id="sellerForm" style="display:none;" class="mt-4">
+        <div id="sellerForm" style="display:none;">
             <h3>Seller Registration</h3>
             <form action="/RevShop_Project_P0/SellerRegistrationServlet" method="post" class="form-group">
                 <label for="sellName">Name:</label>
@@ -147,6 +232,7 @@
             <p>Already have an account? <a href="/RevShop_Project_P0/JSP/Login_page.jsp">Login</a></p>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

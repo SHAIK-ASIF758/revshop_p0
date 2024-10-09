@@ -10,7 +10,7 @@ import jakarta.mail.Transport;
 import jakarta.mail.internet.*;
 
 public class EmailConfig {
-	private static final String USER_NAME = "shaikasif938341@gmail.com";
+	private static final String USER_NAME = "shaikasif43210@gmail.com";
 	private static final String PASSWORD = "ncao shhs cqmr zvwx";
 	private static final String HOST = "smtp.gmail.com";
 	

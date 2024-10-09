@@ -9,106 +9,161 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>RevShop</title>
-   
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>RevShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/Seller_Main.css">
     
-      <style>
-    .charts-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px; /* Reduced margin-top */
-    }
-    .chart-card {
-        flex: 1;
-        margin: 0 5px; /* Reduced margin */
-    }
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background for the body */
+        }
 
-    .chart-card canvas {
-        max-width: 100% !important;
-        max-height: 330px !important; /* Reduced height */
-    }
-    .header-container {
+        .charts-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px; /* Reduced margin-top */
+        }
+
+        .chart-card {
+            flex: 1;
+            margin: 0 5px; /* Reduced margin */
+            background-color: white; /* Card background color */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px; /* Padding inside the card */
+        }
+
+        .chart-card canvas {
+            max-width: 100% !important;
+            max-height: 330px !important; /* Reduced height */
+        }
+
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px; /* Added bottom margin */
         }
-        
+
+        .header-container h4, .header-container h6 {
+            color: #333; /* Dark color for text */
+        }
+
+        .card {
+            background-color: #ffffff; /* Card background color */
+            border: none; /* No border */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s; /* Transition effect for scaling */
+        }
+
+        .card:hover {
+            transform: scale(1.02); /* Scale effect on hover */
+        }
+
+        .card-title {
+            font-weight: bold; /* Bold title */
+            color: #007bff; /* Blue color for titles */
+        }
+
+        .card-text {
+            font-size: 1.5rem; /* Larger text for card values */
+            color: #333; /* Dark color for text */
+        }
+
+        table {
+            width: 100%; /* Full width for the table */
+            margin-top: 20px; /* Space above the table */
+            border-collapse: collapse; /* Collapse borders */
+        }
+
+        th, td {
+            padding: 15px; /* Padding inside table cells */
+            border: 1px solid #dee2e6; /* Light border */
+            text-align: left; /* Left align text */
+        }
+
+        th {
+            background-color: #007bff; /* Header background color */
+            color: white; /* Header text color */
+        }
+
+        /* Style for chart tooltips */
+        .chartjs-tooltip {
+            background: rgba(0, 0, 0, 0.7); /* Dark background for tooltip */
+            color: white; /* White text for tooltip */
+            border-radius: 5px; /* Rounded corners */
+            padding: 5px; /* Padding for tooltip */
+        }
     </style>
 </head>
 <body>
 
 <%@ include file="Seller_navBar.jsp" %> 
 
-    <section class="details-section container">
+<section class="details-section container">
+    <div class="header-container">
+        <h4 id="seller_name">Welcome, <%= sellerName %></h4>
+        <h6 id="seller_email"><%= sellerEmail %></h6>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Earnings</h5>
+                    <p class="card-text" id="totalEarnings">₹<%= seller_DTO.getTotal_earning() %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Items Sold</h5>
+                    <p class="card-text" id="totalItemsSold"><%= seller_DTO.getTotal_item_sold() %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Current Month Earnings</h5>
+                    <p class="card-text" id="currentMonthEarnings">₹<%= seller_DTO.getCurrent_month_earning() %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">This Month Items Sold</h5>
+                    <p class="card-text" id="currentMonthItemsSold"><%= seller_DTO.getCurrent_month_item_sold() %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="chart-card">
+            <h5>Items Sold</h5>
+            <canvas id="itemsSoldChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <h5>Earnings</h5>
+            <canvas id="earningsChart"></canvas>
+        </div>
+    </div>
+</section>
 
-    <div class="header-container" style="margin:20px;">
-            <h4 id="seller_name">Welcome, <%= sellerName %></h4>
-            <h6 id="seller_email" ><%= sellerEmail %></h6>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Earnings</h5>
-                         
-                        <p class="card-text" id="totalEarnings">₹<%= seller_DTO.getTotal_earning() %></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Items Sold</h5>
-                        <p class="card-text" id="totalItemsSold"><%= seller_DTO.getTotal_item_sold() %></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Current Month Earnings</h5>
-                        <p class="card-text" id="currentMonthEarnings">₹<%= seller_DTO.getCurrent_month_earning() %></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">This Month Items Sold</h5>
-                        <p class="card-text" id="currentMonthItemsSold"><%= seller_DTO.getCurrent_month_item_sold() %></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-4">
-            <div class="chart-card">
-                <h5>Items Sold</h5>
-                <canvas id="itemsSoldChart"></canvas>
-            </div>
-            <div class="chart-card">
-                <h5>Earnings</h5>
-                <canvas id="earningsChart"></canvas>
-            </div>
-        </div>
-    </section>
-    <table>
+<table>
     <thead></thead>
-    </table>
+</table>
 
-
-    <!-- Chart.js Script -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
+<!-- Chart.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
-        
         const totalEarnings = parseFloat(document.getElementById('totalEarnings').innerText.replace('₹', ''));
         const currentMonthEarnings = parseFloat(document.getElementById('currentMonthEarnings').innerText.replace('₹', ''));
         const totalItemsSold = parseInt(document.getElementById('totalItemsSold').innerText);
@@ -181,8 +236,6 @@
             }
         });
     });
-
-    </script>
+</script>
 </body>
 </html>
-    

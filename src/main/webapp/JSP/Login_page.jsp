@@ -6,8 +6,133 @@
     <meta charset="UTF-8">
     <title>Login Page</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../CSS/Login_page.css">
-    
+  <style>
+    /* General Styling */
+    body {
+        background: url('../images/rev2.webp') no-repeat center center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+    border:1px solid yellow;
+        background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent container */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px); /* Blur effect */
+    }
+
+    /* Title */
+    h2 {
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* Buttons */
+    .user-type-buttons .btn {
+        width: 120px;
+        margin-right: 10px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .user-type-buttons .btn.active {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: white;
+    }
+
+    .user-type-buttons .btn:hover {
+        background-color: #218838;
+        color: white;
+        transform: scale(1.05); /* Slight scaling on hover */
+    }
+
+    /* Forms */
+    form {
+    border:1px solid lime;
+        background-color: rgba(255, 255, 255, 0.2); /* Slight transparency */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px); /* Blur effect */
+    }
+
+    /* Input Fields */
+    .form-control {
+        border-radius: 5px;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.7); /* Green glow on focus */
+        border-color: #28a745;
+    }
+
+    .input-group-text {
+        background-color: rgba(248, 249, 250, 0.2);
+        backdrop-filter: blur(10px); /* Blur effect */
+    }
+
+    .input-group-text:hover {
+        background-color: rgba(233, 236, 239, 0.2);
+    }
+
+    /* Password Toggle Icon */
+    .input-group-text i {
+        color: #333;
+        transition: color 0.3s ease;
+    }
+
+    .input-group-text:hover i {
+        color: #28a745;
+    }
+
+    /* Submit Button */
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+        transition: all 0.3s ease;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    /* Forgot Password Link */
+    a.btn-link {
+        color: #007bff;
+    }
+
+    a.btn-link:hover {
+        color: #0056b3;
+        text-decoration: underline;
+    }
+
+    /* Registration Link */
+    a.registration-link {
+        color: #28a745;
+        font-weight: bold;
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    a.registration-link:hover {
+        color:red;
+        text-decoration: underline;
+    }
+
+    /* Modal Styling */
+    .modal-content {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        backdrop-filter: blur(10px); /* Blur effect */
+    }
+</style>
+
+
+
     <script>
         function showLoginForm(userType) {
             document.getElementById("customerForm").style.display = "none";
@@ -28,6 +153,7 @@
                 }
             });
         }
+
         function togglePasswordVisibility(id, iconId) {
             var passwordField = document.getElementById(id);
             var icon = document.getElementById(iconId);
@@ -47,7 +173,7 @@
     <div class="container mt-5">
         <h2 class="text-center mb-4">Login to RevShop</h2>
 
-        <div class="user-type-buttons mb-4">
+        <div class="user-type-buttons mb-4 text-center">
             <button class="btn btn-primary" onclick="showLoginForm('customer')">Customer</button>
             <button class="btn btn-primary" onclick="showLoginForm('seller')">Seller</button>
         </div>
@@ -80,6 +206,7 @@
                 <button type="submit" class="btn btn-success btn-block">Login</button>
                 <a href="#" class="btn btn-link" onclick="showForgotPasswordModal()">Forgot Password?</a>
             </form>
+            <a href="Registration_page.jsp" class="registration-link">Don't have an account? Register here!</a> <!-- Registration link -->
         </div>
 
         <!-- Seller Login Form -->
@@ -110,6 +237,7 @@
                 <button type="submit" class="btn btn-success btn-block">Login</button>
                 <a href="#" class="btn btn-link" onclick="showForgotPasswordModal()">Forgot Password?</a>
             </form>
+            <a href="Registration_page.jsp" class="registration-link">Don't have an account? Register here!</a> <!-- Registration link -->
         </div>
     </div>
 

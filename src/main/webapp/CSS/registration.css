@@ -1,108 +1,126 @@
 @charset "UTF-8";
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 90px 10px 10px 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    
+    min-height: 100vh;
 }
 
 .container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 360px;
     width: 100%;
+    text-align: center;
 }
 
 h2, h3 {
-    margin-bottom: 20px;
-    color: #343a40;
+    margin-bottom: 24px;
+    color: #495057;
+    font-size: 24px;
+    letter-spacing: 1px;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #495057;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #6c757d;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s;
 }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
 .form-selection button {
-    background-color: #007bff;
+    background-color: #6c63ff;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
-    margin: 10px;
+    border-radius: 6px;
+    margin: 8px 0;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .form-selection button:hover {
-    background-color: #0056b3;
+    background-color: #5a54d2;
+    transform: translateY(-2px);
 }
 
-/* Change button color on hover */
-.user-type-buttons .btn:hover {
-    background-color: #0056b3; /* Hover color */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Change button color when selected (active) */
-.user-type-buttons .btn.active {
-    background-color: #004494; /* Color for active button */
-    box-shadow: none; /* Ensure no additional box-shadow */
-}
 .user-type-buttons .btn {
-    background-color: #007bff; /* Initial background color */
+    background-color: #17a2b8;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
-    margin: 0 10px;
+    border-radius: 6px;
+    margin: 0 6px;
     cursor: pointer;
+    font-size: 15px;
     transition: background-color 0.3s, box-shadow 0.3s;
-    /* Remove box-shadow to avoid cutting effect */
-    box-shadow: none;
+}
+
+.user-type-buttons .btn:hover {
+    background-color: #138496;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-type-buttons .btn.active {
+    background-color: #0d6efd;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 button {
-    background-color: #28a745;
+    background-color: #20c997;
     color: white;
-    padding: 10px 20px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #17a58d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .loginLink {
     margin-top: 20px;
+    font-size: 14px;
 }
 
 .loginLink a {
-    color: #28a745;
+    color: #20c997;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .loginLink a:hover {
     text-decoration: underline;
+    color: #17a58d;
 }
